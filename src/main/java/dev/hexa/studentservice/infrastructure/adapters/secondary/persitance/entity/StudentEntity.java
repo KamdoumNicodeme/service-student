@@ -1,4 +1,4 @@
-package dev.hexa.studentservice.infrastructure.adapters.out.persitance.entity;
+package dev.hexa.studentservice.infrastructure.adapters.secondary.persitance.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

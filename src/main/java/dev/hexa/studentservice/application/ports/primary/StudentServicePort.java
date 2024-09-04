@@ -1,9 +1,10 @@
-package dev.hexa.studentservice.application.ports.in;
+package dev.hexa.studentservice.application.ports.primary;
 
+import dev.hexa.studentservice.application.annotation.PrimaryPort;
 import dev.hexa.studentservice.domain.model.Student;
 
 import java.util.List;
-
+@PrimaryPort
 public interface StudentServicePort {
 
     Student findById(Long id);

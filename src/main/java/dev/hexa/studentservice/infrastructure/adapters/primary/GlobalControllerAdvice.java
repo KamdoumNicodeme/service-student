@@ -1,4 +1,4 @@
-package dev.hexa.studentservice.infrastructure.adapters.in.restapi;
+package dev.hexa.studentservice.infrastructure.adapters.primary;
 
 import com.sun.jdi.request.DuplicateRequestException;
 import dev.hexa.studentservice.domain.exception.StudentNotFoundException;

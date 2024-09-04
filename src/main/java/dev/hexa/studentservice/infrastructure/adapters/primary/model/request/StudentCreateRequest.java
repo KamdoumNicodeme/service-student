@@ -1,4 +1,4 @@
-package dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.request;
+package dev.hexa.studentservice.infrastructure.adapters.primary.model.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

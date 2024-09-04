@@ -1,8 +1,8 @@
 package dev.hexa.studentservice.application.service;
 
 import dev.hexa.studentservice.application.annotation.Service;
-import dev.hexa.studentservice.application.ports.in.StudentServicePort;
-import dev.hexa.studentservice.application.ports.out.StudentPersistencePort;
+import dev.hexa.studentservice.application.ports.primary.StudentServicePort;
+import dev.hexa.studentservice.application.ports.secondary.StudentPersistencePort;
 import dev.hexa.studentservice.domain.exception.StudentNotFoundException;
 import dev.hexa.studentservice.domain.model.Student;
 import lombok.RequiredArgsConstructor;

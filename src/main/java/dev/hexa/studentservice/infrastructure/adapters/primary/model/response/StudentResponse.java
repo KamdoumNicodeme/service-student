@@ -1,4 +1,4 @@
-package dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.response;
+package dev.hexa.studentservice.infrastructure.adapters.primary.model.response;
 
 import lombok.*;
 
