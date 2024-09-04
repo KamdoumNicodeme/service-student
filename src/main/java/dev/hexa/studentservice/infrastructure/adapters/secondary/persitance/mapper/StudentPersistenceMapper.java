@@ -1,7 +1,7 @@
-package dev.hexa.studentservice.infrastructure.adapters.out.persitance.mapper;
+package dev.hexa.studentservice.infrastructure.adapters.secondary.persitance.mapper;
 
 import dev.hexa.studentservice.domain.model.Student;
-import dev.hexa.studentservice.infrastructure.adapters.out.persitance.entity.StudentEntity;
+import dev.hexa.studentservice.infrastructure.adapters.secondary.persitance.entity.StudentEntity;
 import org.mapstruct.Mapper;
 
 import java.util.List;

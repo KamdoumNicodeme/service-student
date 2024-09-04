@@ -1,9 +1,10 @@
-package dev.hexa.studentservice.infrastructure.adapters.in.restapi;
+package dev.hexa.studentservice.infrastructure.adapters.primary;
 
-import dev.hexa.studentservice.application.ports.in.StudentServicePort;
-import dev.hexa.studentservice.infrastructure.adapters.in.restapi.mapper.StudentRestMapper;
-import dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.request.StudentCreateRequest;
-import dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.response.StudentResponse;
+import dev.hexa.studentservice.application.annotation.PrimaryAdapter;
+import dev.hexa.studentservice.application.ports.primary.StudentServicePort;
+import dev.hexa.studentservice.infrastructure.adapters.primary.mapper.StudentRestMapper;
+import dev.hexa.studentservice.infrastructure.adapters.primary.model.request.StudentCreateRequest;
+import dev.hexa.studentservice.infrastructure.adapters.primary.model.response.StudentResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/students"  )
 @RequiredArgsConstructor
+@PrimaryAdapter
 public class StudentRestAdapter {
 
     private final StudentServicePort studentService;

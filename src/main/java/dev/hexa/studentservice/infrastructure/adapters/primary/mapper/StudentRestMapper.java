@@ -1,8 +1,8 @@
-package dev.hexa.studentservice.infrastructure.adapters.in.restapi.mapper;
+package dev.hexa.studentservice.infrastructure.adapters.primary.mapper;
 
 import dev.hexa.studentservice.domain.model.Student;
-import dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.request.StudentCreateRequest;
-import dev.hexa.studentservice.infrastructure.adapters.in.restapi.model.response.StudentResponse;
+import dev.hexa.studentservice.infrastructure.adapters.primary.model.request.StudentCreateRequest;
+import dev.hexa.studentservice.infrastructure.adapters.primary.model.response.StudentResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
