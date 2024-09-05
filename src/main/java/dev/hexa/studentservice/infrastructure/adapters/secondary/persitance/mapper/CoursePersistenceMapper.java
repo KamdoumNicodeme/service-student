@@ -11,5 +11,6 @@ public interface CoursePersistenceMapper {
     CourseEntity toCourseEntity(Course course);
     Course toCourse(CourseEntity courseEntity);
 
+
     List<Course> toCourseList(List<CourseEntity> courseEntities);
 }
