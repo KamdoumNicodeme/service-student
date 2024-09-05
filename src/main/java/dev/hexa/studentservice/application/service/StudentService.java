@@ -1,6 +1,6 @@
 package dev.hexa.studentservice.application.service;
 
-import dev.hexa.studentservice.application.annotation.Service;
+import dev.hexa.studentservice.application.annotation.DomainService;
 import dev.hexa.studentservice.application.ports.primary.StudentServicePort;
 import dev.hexa.studentservice.application.ports.secondary.StudentPersistencePort;
 import dev.hexa.studentservice.domain.exception.StudentNotFoundException;
@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Service
+@DomainService
 public class StudentService implements StudentServicePort {
 
     private final StudentPersistencePort studentPersistencePort;

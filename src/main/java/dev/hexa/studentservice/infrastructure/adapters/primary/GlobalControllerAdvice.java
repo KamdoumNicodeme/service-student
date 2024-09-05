@@ -1,6 +1,7 @@
 package dev.hexa.studentservice.infrastructure.adapters.primary;
 
 import com.sun.jdi.request.DuplicateRequestException;
+import dev.hexa.studentservice.domain.exception.CourseNotFoundException;
 import dev.hexa.studentservice.domain.exception.StudentNotFoundException;
 import dev.hexa.studentservice.domain.model.ErrorResponse;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -60,6 +61,16 @@ public class GlobalControllerAdvice {
                 .code(GENERIC_ERROR.getCode())
                 .message(GENERIC_ERROR.getMessage())
                 .details(Collections.singletonList(ex.getMessage()))
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler(CourseNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleCourseNotFoundException() {
+        return ErrorResponse.builder()
+                .code(COURSE_NOT_FOUND.getCode())
+                .message(COURSE_NOT_FOUND.getMessage())
                 .timestamp(LocalDateTime.now())
                 .build();
     }
