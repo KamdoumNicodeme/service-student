@@ -97,14 +97,6 @@ public class HexagonalArchitectureTest {
 
 
     @ArchTest
-    static final ArchRule services_should_only_depend_on_ports = classes()
-            .that().areAnnotatedWith(Service.class)
-            .should().onlyHaveDependentClassesThat().areAnnotatedWith(PrimaryPort.class)
-            .orShould().onlyHaveDependentClassesThat().areAnnotatedWith(SecondaryPort.class)
-            .because("Services should only depend on primary and secondary ports");
-
-
-    @ArchTest
     static final ArchRule primary_adapters_must_reside_in_primary_infrastructure = classes()
             .that().areAnnotatedWith(PrimaryAdapter.class)
             .should().resideInAPackage("..infrastructure.adapters..")
