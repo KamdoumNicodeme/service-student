@@ -13,7 +13,6 @@ import java.util.List;
 public interface CourseRestMapper {
 
     List<CourseResponse> toCourseResponse(List<Course> courses);
-    @Mapping(target = "id", ignore = true)
 
     @Mapping(target = "id", ignore = true)
     Course toCourse(CourseCreateRequest request);

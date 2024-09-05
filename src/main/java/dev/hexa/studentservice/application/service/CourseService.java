@@ -43,7 +43,9 @@ public class CourseService implements CourseServicePort {
             updatedCourse.setLanguage(course.getLanguage());
             updatedCourse.setFormat(course.getFormat());
             updatedCourse.setPrice(course.getPrice());
-            return coursePersistencePort.update(updatedCourse.getId(), updatedCourse);
+
+            return coursePersistencePort.save(updatedCourse);
+         
         }).orElseThrow(CourseNotFoundException::new);
     }
 
