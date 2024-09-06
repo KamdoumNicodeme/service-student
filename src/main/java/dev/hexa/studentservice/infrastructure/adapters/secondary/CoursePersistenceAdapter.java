@@ -14,6 +14,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -26,6 +27,22 @@ public class CoursePersistenceAdapter implements CoursePersistencePort {
     public List<Course> getSpecificCourse(List<String> criteria) {
         Specification<CourseEntity> specification = filterByAnyCriteria(criteria);
         return mapper.toCourseList(courseRepository.findAll(specification));
+    }
+
+    @Override
+    public Course save(Course course) {
+        return mapper.toCourse(courseRepository.save(mapper.toCourseEntity(course)));
+    }
+
+
+    @Override
+    public Optional<Course> findById(Long id) {
+        return courseRepository.findById(id).map(mapper::toCourse);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        courseRepository.deleteById(id);
     }
 
     private Specification<CourseEntity> filterByAnyCriteria(List<String> criteria) {

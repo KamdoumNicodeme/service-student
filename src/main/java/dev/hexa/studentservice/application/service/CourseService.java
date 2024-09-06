@@ -13,13 +13,49 @@ import java.util.List;
 @DomainService
 public class CourseService implements CourseServicePort {
 
+
     private final CoursePersistencePort coursePersistencePort;
+
     @Override
     public List<Course> getSpecificCourse(List<String> criteria) {
-        List<Course> courses =  coursePersistencePort.getSpecificCourse(criteria);
+        List<Course> courses = coursePersistencePort.getSpecificCourse(criteria);
         if (courses.isEmpty()) {
             throw new CourseNotFoundException();
         }
         return courses;
+    }
+
+    @Override
+    public Course saveCourse(Course course) {
+        return coursePersistencePort.save(course);
+    }
+
+    @Override
+    public Course updateCourse(Long id,Course course) {
+        return coursePersistencePort.findById(id).map(updatedCourse -> {
+            updatedCourse.setTitle(course.getTitle());
+            updatedCourse.setDescription(course.getDescription());
+            updatedCourse.setInstructor(course.getInstructor());
+            updatedCourse.setDepartment(course.getDepartment());
+            updatedCourse.setLevel(course.getLevel());
+            updatedCourse.setDuration(course.getDuration());
+            updatedCourse.setCredits(course.getCredits());
+            updatedCourse.setLanguage(course.getLanguage());
+            updatedCourse.setFormat(course.getFormat());
+            updatedCourse.setPrice(course.getPrice());
+
+            return coursePersistencePort.save(updatedCourse);
+         
+        }).orElseThrow(CourseNotFoundException::new);
+    }
+
+    @Override
+    public Course findOneCourse(Long id) {
+        return coursePersistencePort.findById(id).orElseThrow(CourseNotFoundException::new);
+    }
+
+    @Override
+    public void deleteCourse(Long id) {
+        coursePersistencePort.deleteById(id);
     }
 }

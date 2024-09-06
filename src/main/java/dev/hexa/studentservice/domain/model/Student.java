@@ -1,6 +1,5 @@
 package dev.hexa.studentservice.domain.model;
 
-import jakarta.persistence.Entity;
 
 import lombok.*;
 
