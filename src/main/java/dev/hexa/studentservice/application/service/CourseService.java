@@ -31,8 +31,8 @@ public class CourseService implements CourseServicePort {
     }
 
     @Override
-    public Course updateCourse(Course course) {
-        return coursePersistencePort.findById(course.getId()).map(updatedCourse -> {
+    public Course updateCourse(Long id,Course course) {
+        return coursePersistencePort.findById(id).map(updatedCourse -> {
             updatedCourse.setTitle(course.getTitle());
             updatedCourse.setDescription(course.getDescription());
             updatedCourse.setInstructor(course.getInstructor());
@@ -52,5 +52,10 @@ public class CourseService implements CourseServicePort {
     @Override
     public Course findOneCourse(Long id) {
         return coursePersistencePort.findById(id).orElseThrow(CourseNotFoundException::new);
+    }
+
+    @Override
+    public void deleteCourse(Long id) {
+        coursePersistencePort.deleteById(id);
     }
 }

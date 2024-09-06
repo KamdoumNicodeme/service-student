@@ -29,4 +29,15 @@ public class CourseRestAdapter {
     public ResponseEntity<CourseResponse> saveNewCourse(@RequestBody CourseCreateRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(courseRestMapper.toCourseResponse(courseRestMapper.toCourse(request)));
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCourse(@PathVariable Long id){
+        courseService.deleteCourse(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public CourseResponse updateCourse(@PathVariable Long id, @RequestBody CourseCreateRequest request){
+        return courseRestMapper.toCourseResponse(courseService.updateCourse(id,courseRestMapper.toCourse(request)));
+    }
+
 }

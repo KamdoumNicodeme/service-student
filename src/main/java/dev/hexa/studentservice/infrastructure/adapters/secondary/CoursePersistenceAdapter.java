@@ -40,6 +40,11 @@ public class CoursePersistenceAdapter implements CoursePersistencePort {
         return courseRepository.findById(id).map(mapper::toCourse);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        courseRepository.deleteById(id);
+    }
+
     private Specification<CourseEntity> filterByAnyCriteria(List<String> criteria) {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = criteria.stream()

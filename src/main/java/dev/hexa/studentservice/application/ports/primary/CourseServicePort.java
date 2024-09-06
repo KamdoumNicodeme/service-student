@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface CourseServicePort {
     List<Course> getSpecificCourse(List<String> criteria);
     Course saveCourse(Course course);
-    Course updateCourse(Course course);
+    Course updateCourse(Long id,Course course);
     Course findOneCourse(Long id);
+    void deleteCourse(Long id);
 }

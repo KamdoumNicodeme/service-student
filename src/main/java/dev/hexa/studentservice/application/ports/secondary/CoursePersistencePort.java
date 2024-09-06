@@ -12,5 +12,6 @@ public interface CoursePersistencePort {
     List<Course> getSpecificCourse(List<String> criteria);
     Course save(Course course);
     Optional<Course> findById(Long id);
+    void deleteById(Long id);
 
 }
